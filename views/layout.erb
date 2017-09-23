@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Sinatra + Twitter Bootstrap</title>
+		<title>Barbershop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -18,6 +18,14 @@
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+		<!-- Simple colorpicker JQuerry -->
+		<script src="/jquery.simplecolorpicker.js"></script>
+		<link rel="stylesheet" href="/jquery.simplecolorpicker.css"/>
+
+		<!-- Datetimepicker JQuerry -->
+		<link rel="stylesheet" type="text/css" href="/datetimepicker/jquery.datetimepicker.css"/ >
+		<script src="/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -27,26 +35,16 @@
 	</head>
 	<body>
 		<div class="container">
+		<nav class="navbar navbar-light bg-light">
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" role="navigation">
-			  <div class="navbar-header">
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			      <span class="sr-only">Toggle navigation</span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="/">My Website</a>
-			  </div>
-			  <div class="navbar-collapse collapse">
-			    <ul class="nav navbar-nav">
-			      <li><a href="/blabla">Blabla</a></li>
-			      <li><a href="/something">Something</a></li>
-			      <li><a href="/contacts">Contacts</a></li>
-			    </ul>
-			  </div><!--/.nav-collapse -->
-			</nav>
+			<a class="navbar-brand" href="/">BarberShop</span>
+			<div class="btn-group btn-left" role="group" aria-label="Basic example">
+					<a type="button" class="btn btn-secondary"
+					href="/about">About</a>
+			</div>
+
+		</nav>
 
 			<div>
 			      <%if @error && @error.length > 0 then %>
@@ -54,7 +52,7 @@
 			      <% end %>
 			      <%= yield %>
 			</div>
-
-	</div>
+		</div>
   </body>
+
 </html>
