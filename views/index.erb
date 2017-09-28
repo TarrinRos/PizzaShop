@@ -16,17 +16,21 @@
           <%= p.description %>
         </div>
         <div>
-          <%= p.size %>
+          Size:  <%= p.size %> cm
         </div>
         <div>
-          <%= p.price %>
+          Price: <%= p.price %> rub
+        </div>
+        <div>
+          <button class="btn btn btn-outline-success btn-sm" onclick="add_to_cart()">Order me!</button>
         </div>
       </div>
     </P>
     <% end %>
 
-
-      <button class="btn btn-primary" onclick="something()">Order me!</button>
+    <p>
+      <button class="btn btn-primary" onclick="something()">Click me</button>
+    </p>
 
   </div>
 </div>
