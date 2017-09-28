@@ -1,17 +1,32 @@
 <h1>Welcome to PizzaShop</h1>
+
+
 <div class="container">
   <div class="row">
-    <div class="col-md">
-      <img src="/images/hawaiian.jpg" alt="..." class="img-thumbnail">
+    <% @products.each do |p| %>
+    <P>
+      <div class="col-md-4">
+        <div>
+          <%= p.title %>
+        </div>
+        <div>
+          <img src="<%= p.path_to_image %>" />
+        </div>
+        <div>
+          <%= p.description %>
+        </div>
+        <div>
+          <%= p.size %>
+        </div>
+        <div>
+          <%= p.price %>
+        </div>
+      </div>
+    </P>
+    <% end %>
+
+
       <button class="btn btn-primary" onclick="something()">Order me!</button>
-    </div>
-    <div class="col-md">
-      <img src="/images/pepperoni.jpg" alt="..." class="img-thumbnail">
-      <button class="btn btn-primary" onclick="something()">Order me!</button>
-    </div>
-    <div class="col-md">
-      <img src="/images/veg.jpg" alt="..." class="img-thumbnail">
-      <button class="btn btn-primary" onclick="something()">Order me!</button>
-    </div>
+
   </div>
 </div>
