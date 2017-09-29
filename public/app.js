@@ -10,7 +10,16 @@ function something()
 function add_to_cart(id)
 {
   var key = 'product_' + id;
-    var x = window.localStorage.getItem(key);
+  var x = window.localStorage.getItem(key);
   x = x * 1 + 1;
   window.localStorage.setItem(key, x);
+}
+
+function list_all_Items()
+{
+  total = 0;
+  $.each(localStorage, function(key, value){
+    total = total * 1 + value * 1;
+  });
+  alert('Summary:' + total);
 }
