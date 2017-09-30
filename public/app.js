@@ -15,6 +15,7 @@ function add_to_cart(id)
   window.localStorage.setItem(key, x);
 
   update_orders_input();
+  update_orders_button();
 }
 
 function update_orders_input()
@@ -23,13 +24,19 @@ function update_orders_input()
   $('#orders_input').val(orders);
 }
 
+function update_orders_button()
+{
+  var text = 'Cart ('+ list_all_Items() +')';
+  $('#orders_button').val(text);
+}
+
 function list_all_Items()
 {
   total = 0;
   $.each(localStorage, function(key, value){
     total += value * 1;
   });
-  alert('Summary: ' + total);
+  return total;
 }
 
 function cart_get_orders()
