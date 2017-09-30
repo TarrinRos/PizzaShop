@@ -19,7 +19,7 @@ function list_all_Items()
 {
   total = 0;
   $.each(localStorage, function(key, value){
-    total = total * 1 + value * 1;
+    total += value * 1;
   });
-  alert('Summary:' + total);
+  alert('Summary: ' + total);
 }
