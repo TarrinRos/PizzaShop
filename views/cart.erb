@@ -1,5 +1,7 @@
 <h1>Hello!</h1>
 
+<%= @items.inspect %>
+
 <table class="table">
   <thead class="thead-inverse">
     <tr>
@@ -10,6 +12,8 @@
       <th>Qty</th>
     </tr>
   </thead>
+  <%= total_price = 0 %>
+  <%= total_qty = 0 %>
 
   <% @items.each do |item| %>
   <tbody>
@@ -19,6 +23,14 @@
       <td><%= item[0].price %></td>
       <td><%= item[1] %></td>
     </tr>
+    <% total_price += item[0].price %>
+    <% total_qty += item[1].to_i %>
   <% end %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Total price: <%= total_price * total_qty %></td>
+    <td>total quantity: <%= total_qty %></td>
+  </tr>
   </tbody>
 </table>

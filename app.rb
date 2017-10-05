@@ -9,12 +9,8 @@ set :database, 'sqlite3:pizzashop.db'
 class Product < ActiveRecord::Base
 end
 
-before do
-  @products = Product.all
-end
-
 get '/' do
-  @products
+  @products = Product.all
   erb :index
 end
 
@@ -28,7 +24,7 @@ post '/cart' do
 
   @items.each do |item|
     # id, cnt
-    item[0] = @products.find(item[0])
+    item[0] = Product.find(item[0])
   end
   erb :cart
 end
