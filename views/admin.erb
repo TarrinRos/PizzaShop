@@ -1,0 +1,27 @@
+<h1>Hi! I am admin</h1>
+<%= @orders.inspect %>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Adress</th>
+      <th>Ordered</th>
+      <th>Updated at</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tbody>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.name %></td>
+      <td><%= order.phone %></td>
+      <td><%= order.adress %></td>
+      <td><%= order.orders_input %></td>
+      <td><%= order.updated_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

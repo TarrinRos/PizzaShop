@@ -27,9 +27,7 @@ post '/cart' do
   @items = parse_orders_input @orders_input
 
   # returns message if cart is empty
-  if @items.length == 0
-    return erb :cart_is_empty
-  end
+  return erb :cart_is_empty if @items.empty?
   # returns items list in cart
   @items.each do |item|
     # id, cnt
@@ -44,7 +42,12 @@ post '/place_order' do
   erb :order_placed
 end
 
-def parse_orders_input orders_input
+get '/admin' do
+  @orders = Order.order 'created_at DESC'
+  erb :admin
+end
+
+def parse_orders_input(orders_input)
   s1 = orders_input.split(/,/)
 
   arr = []
