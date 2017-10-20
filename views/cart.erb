@@ -35,9 +35,9 @@
   </tbody>
 </table>
 
-<form action="/visit" method="POST" role="form">
+<form action="/place_order" method="POST" role="form">
 
-  <input id="order[orders_input]" type="hidden" value="<%= @orders_input %>">
+  <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>">
 
   <div class="form-group">
     <label>First name and Last name: </label>
@@ -54,4 +54,5 @@
     <textarea name="order[adress]" class="form-control" placeholder="Please, enter your adress"></textarea>
   </div>
   <button type="submit" class="btn btn-warning">Place order</button>
+  <button class="btn btn-danger" onclick="return cancel_order()">Cancel</button>
 </form>
